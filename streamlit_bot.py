@@ -62,8 +62,8 @@ if choice == "🏠Home":
    
     
     initialize_session_state()
-    st.title("Mincrypt 🤖 ")
-    st.write(" Ask me anythink relared travel 😀 ")
+    st.title("SpendSmart🤖 ")
+    st.write("Hello! Welcome to SpendSmart, your personal finance companion. How can I assist you today? ")
 
     chat_placeholder = st.container()
     prompt_placeholder = st.form("Chat-form")
