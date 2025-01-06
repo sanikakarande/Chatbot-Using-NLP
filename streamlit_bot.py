@@ -24,7 +24,6 @@ def on_click_callback():
     st.session_state.history.append(Message("human", human_prompt))
     st.session_state.history.append(Message("ai", response))
 
-load_css()
 
 
 
