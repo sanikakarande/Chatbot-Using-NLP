@@ -7,7 +7,6 @@ from sklearn.metrics import accuracy_score, classification_report
 import streamlit.components.v1 as components
 import streamlit as st
 from chatbot import chat_bot, X_test,y_test,clf
-python manage.py collectstatic
 
 @dataclass
 class Message:
