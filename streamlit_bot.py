@@ -16,11 +16,14 @@ class Message:
 
 def load_css():
     try:
-         with open("static/style.css", "r") as f:
+        with open("static/style.css", "r") as f:
             css = f"<style>{f.read()}</style>"
             st.markdown(css, unsafe_allow_html=True)
-    except FileNotFoundError: st.error("CSS file not found.") 
-    except Exception as e: st.error(f"An error occurred: {e}")
+    except FileNotFoundError:
+        st.error("CSS file not found. Please ensure 'style.css' is in the 'static/' directory.")
+    except Exception as e:
+        st.error(f"An unexpected error occurred while loading CSS: {e}")
+
 
 def initialize_session_state():
     if "history" not in st.session_state:
@@ -62,7 +65,7 @@ if choice == "🏠Home":
    
     
     initialize_session_state()
-    st.title("SpendSmart🤖 ")
+    st.title("SpendSmart💬🪙 ")
     st.write("Hello! Welcome to SpendSmart, your personal finance companion. How can I assist you today? ")
 
     chat_placeholder = st.container()
