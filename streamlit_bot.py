@@ -13,23 +13,6 @@ class Message:
     """Class for keeping track of a chat message."""
     origin: Literal["human", "ai"]
     message: str
-
-def load_css():
-    try:
-        # Ensure the 'static' directory exists before attempting to load the file
-        if not os.path.exists("static/style.css"):
-            st.error("CSS file not found. Please ensure 'style.css' is in the 'static/' directory.")
-            return
-
-        # Read the CSS file and inject it into the Streamlit app
-        with open("static/style.css", "r") as f:
-            css = f"<style>{f.read()}</style>"
-            st.markdown(css, unsafe_allow_html=True)
-
-    except FileNotFoundError:
-        st.error("CSS file not found. Please ensure 'style.css' is in the 'static/' directory.")
-    except Exception as e:
-        st.error(f"An unexpected error occurred while loading CSS: {e}")
         
 def initialize_session_state():
     if "history" not in st.session_state:
