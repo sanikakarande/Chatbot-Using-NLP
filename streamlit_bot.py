@@ -15,13 +15,14 @@ class Message:
     message: str
 
 def load_css():
-    css_path = os.path.join(os.path.dirname(__file__), "static", "style.css")
     try:
-        with open(css_path, "r") as f:
+        with open("static/style.css", "r") as f:
             css = f"<style>{f.read()}</style>"
             st.markdown(css, unsafe_allow_html=True)
     except FileNotFoundError:
-        st.error(f"CSS file not found at {css_path}.")
+        st.error("CSS file not found. Please ensure 'style.css' is in the 'static/' directory.")
+    except Exception as e:
+        st.error(f"An unexpected error occurred while loading CSS: {e}")
 
 
 def initialize_session_state():
